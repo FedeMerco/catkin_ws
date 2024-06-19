@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <node pkg="panda_controllers" name="trajectory_command" type="trajectory" required="true" output="screen"/>
+    <node pkg="panda_controllers" name="variable_impedance_command" type="variable_impedance" required="true" output="screen"/>
+    
+</launch>

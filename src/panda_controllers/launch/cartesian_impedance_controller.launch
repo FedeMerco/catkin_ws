@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<launch>
+
+	<arg name="arm_id" default="panda" doc="Name of the panda robot to spawn" />
+	<arg name="prefix" default="/robot/arm" doc="prefix for arm" />
+	
+	<rosparam command="load" file="$(find panda_controllers)/config/panda_controllers_default.yaml" />
+
+	<arg name="rviz" default="false" doc="Should RVIz be launched?" />
+	<arg name="rviz_config" default="$(find franka_example_controllers)/launch/rviz/franka_description_with_marker.rviz" />
+	
+	<node pkg="rviz" type="rviz" output="screen" name="rviz" args="-f $(arg arm_id)_link0 -d $(arg rviz_config) --splash-screen $(find franka_visualization)/splash.png" if="$(arg rviz)"/>
+
+	<!-- <include file="$(find franka_gazebo)/launch/panda.launch"> -->
+
+	<include file="$(find panda_controllers)/launch/gazebo/panda.launch">
+		<arg name="controller" value="cartesian_impedance_controller" />
+	</include>	
+
+</launch>
