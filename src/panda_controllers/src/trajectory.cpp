@@ -14,6 +14,8 @@ double r = 0.01; // r1
 // double r = 0.0001; // r3
 // double r = 0.00001; // r4
 
+// ciao
+
 ros::Publisher pub;
 
 void ee_pose_callback(geometry_msgs::PoseStamped ee_pose) {
