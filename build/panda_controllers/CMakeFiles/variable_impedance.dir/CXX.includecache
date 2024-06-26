@@ -13,6 +13,10 @@ geometry_msgs/Vector3Stamped.h
 -
 geometry_msgs/WrenchStamped.h
 -
+fstream
+-
+vector
+-
 
 /opt/ros/noetic/include/geometry_msgs/Vector3.h
 string

@@ -228,8 +228,6 @@ void CartesianImpedanceController::update(const ros::Time& /*time*/,
     joint_handles_[i].setCommand(tau_d(i));
   }
 
-
-
   // position_d_target_ << 0.30707093243261097, -0.00004975443320201987, 0.2;
 
   // update parameters changed online either through dynamic reconfigure or through the interactive
