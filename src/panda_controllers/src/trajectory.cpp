@@ -35,7 +35,7 @@ geometry_msgs::PoseStamped calcolo_waypoints(int index, geometry_msgs::PoseStamp
 int main(int argc, char** argv) {
     ros::init(argc, argv, "trajectory_command");
     ros::NodeHandle nh;
-    ros::Rate rate(5); // 2 Hz
+    ros::Rate rate(5); // 5 Hz
 
     ROS_INFO("Traiettoria impostata");
 
