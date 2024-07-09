@@ -27,6 +27,12 @@ geometry_msgs::PoseStamped calcolo_waypoints(int index, geometry_msgs::PoseStamp
     pose.pose.position.y = (1 - alpha) * goal.pose.position.y + alpha * start.pose.position.y;
     pose.pose.position.z = (1 - alpha) * goal.pose.position.z + alpha * start.pose.position.z;
 
+    // Orientazione di spawn mantenuta costante
+    pose.pose.orientation.x = 0.9999935573216577;
+    pose.pose.orientation.y = -0.00011923487239548832;
+    pose.pose.orientation.z = 0.002841433929978204;
+    pose.pose.orientation.w = 4.825331970615042e-05;
+
     return pose;
 
 }

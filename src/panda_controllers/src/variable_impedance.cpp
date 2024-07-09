@@ -46,7 +46,7 @@ void timer_callback(const ros::TimerEvent&) {
 
             stiffness.vector.z = 200;
 
-        } else if (stiffness.vector.z <= 10) {
+        } else if (stiffness.vector.z <= 30) {
 
             stiffness.vector.z = 30;
             
@@ -73,7 +73,9 @@ int main(int argc, char** argv) {
 
     pub = nh.advertise<geometry_msgs::Vector3Stamped>("/cartesian_impedance_controller/desired_stiffness", 10);
 
-    sub = nh.subscribe("/franka_state_controller/F_ext", 10, F_ext_callback);
+    // sub = nh.subscribe("/franka_state_controller/F_ext", 10, F_ext_callback);
+
+    sub = nh.subscribe("/ft_sensor/netft_data", 10, F_ext_callback);
 
     ros::Timer timer1 = nh.createTimer(ros::Duration(1), timer_callback);
 
